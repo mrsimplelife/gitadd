@@ -10,7 +10,7 @@ const isAuth = (state = Boolean(localStorage.getItem('jwt')), action) => {
 		case 'LOGIN_SUCCESS':
 			return true;
 		case 'LOGOUT_SUCCESS':
-			return true;
+			return false;
 		default:
 			return state;
 	}
