@@ -1,6 +1,5 @@
 import React from 'react';
-
-const Login = ({ getPassword, getEmail, LoginUser }) => {
+const Login = ({ getPassword, getEmail, LoginUser, isAuth }) => {
 	return (
 		<div>
 			<input type="email" placeholder="이메일" onChange={getEmail} />

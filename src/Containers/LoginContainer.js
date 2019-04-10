@@ -25,6 +25,9 @@ const LoginContainer = (state) => {
 	return (
 		<Mutation mutation={LOGIN_USER} variables={{ email, password }}>
 			{(loginUser, result) => {
+				if (state.isAuth) {
+					return <Redirect to="/" />;
+				}
 				const { data, loading, error, called } = result;
 				if (!called) {
 					return <Login getPassword={getPassword} getEmail={getEmail} LoginUser={loginUser} />;

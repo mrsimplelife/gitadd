@@ -1,12 +1,13 @@
 import React from 'react';
 import HomeBook from '../Components/HomeBook';
 import UploadBookLinkContainer from './UploadBookLinkContainer';
-const HomeBookContainer = () => {
+import { connect } from 'react-redux';
+const HomeBookContainer = ({ isAuth }) => {
 	return (
 		<div>
 			<HomeBook />
-			<UploadBookLinkContainer />
+			{isAuth && <UploadBookLinkContainer />}
 		</div>
 	);
 };
-export default HomeBookContainer;
+export default connect((state) => state)(HomeBookContainer);

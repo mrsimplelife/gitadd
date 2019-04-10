@@ -4,6 +4,6 @@ import React from 'react';
 
 const AppContainer = (state) => {
 	console.log(state);
-	return <App />;
+	return <App isAuth={state.isAuth} />;
 };
 export default connect((state) => state)(AppContainer);
